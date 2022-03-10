@@ -1,0 +1,30 @@
+{
+  "name": "projectforpotfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node api/server.js",
+    "dev": "nodemon api/server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "author": "ajay sahani",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.1",
+    "body-parser": "^1.19.0",
+    "cloudinary": "^1.26.3",
+    "cookie-parser": "^1.4.5",
+    "country-state-city": "^3.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "express-fileupload": "^1.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.5",
+    "nodemailer": "^6.7.2",
+    "stripe": "^8.174.0",
+    "validator": "^13.7.0"
+  }
+}
