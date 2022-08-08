@@ -1,14 +1,16 @@
 const app = require("./app")
-
-// const dotenv = require("dotenv")
+const dotenv = require("dotenv")
 const cloudinary = require("cloudinary")
+const { sendEmailAfterRegister } = require("./cronjob/loginEmail")
 const connectDatabase = require("./config/database")
 
-// dotenv.config({ path: "api/config/.env" })
+
+dotenv.config({ path: "api/config/.env" })
 // Config
-if (process.env.NODE_ENV !== "PRODUCTION") {
-    require("dotenv").config({ path: "api/config/.env" });
-}
+// if (process.env.NODE_ENV !== "PRODUCTION") {
+//     require("dotenv").config({ path: "api/config/.env" });
+// }
+// sendEmailAfterRegister.start();
 
 connectDatabase()
 
