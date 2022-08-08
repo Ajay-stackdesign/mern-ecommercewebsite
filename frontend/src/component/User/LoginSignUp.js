@@ -10,6 +10,9 @@ import { useAlert } from "react-alert"
 import { useDispatch, useSelector } from 'react-redux';
 import { clearErrors, login, register } from "../../actions/userAction"
 import Loader from '../layout/Loader/Loader';
+import Google from "../../images/facebook.png"
+import Github from "../../images/github.png"
+import Facebook from "../../images/google.png"
 
 
 const LoginSignUp = ({ history, location }) => {
@@ -92,6 +95,18 @@ const LoginSignUp = ({ history, location }) => {
             registerTab.current.classList.add("shiftToNeutralForm");
             loginTab.current.classList.add("shiftToLeft");
         }
+    }
+
+    const google = () => {
+        // window.open("http://localhost:8003/auth/google", "_self");
+    }
+
+    const facebook = () => {
+        // window.open("http://localhost:8003/auth/google", "_self");
+    }
+
+    const github = () => {
+        // window.open("http://localhost:8003/auth/google", "_self");
     }
 
 
@@ -181,6 +196,26 @@ const LoginSignUp = ({ history, location }) => {
                     </div>
                 </div>
             </Fragment>)}
+            <div className="login">
+                <hr></hr>
+                <h3 className="loginTitle">Choose a Login Method</h3>
+                <div className="wrapper">
+                    <div className="left">
+                        <div className="loginButton Google" onClick={google}>
+                            <img src={Google} alt="" className="icon" />
+                            Google
+                        </div>
+                        <div className="loginButton Facebook" onClick={facebook}>
+                            <img src={Facebook} alt="" className="icon" />
+                            Facebook
+                        </div>
+                        <div className="loginButton Github" onClick={github}>
+                            <img src={Github} alt="" className="icon" />
+                            Github
+                        </div>
+                    </div>
+                </div>
+            </div>
         </Fragment>
 
     );

@@ -43,12 +43,14 @@ import ProductReviews from "./component/Admin/ProductReviews"
 import About from "./component/layout/About/About";
 import Contact from "./component/layout/Contact/Contact";
 import NotFound from "./component/layout/Notfound/NotFound";
+import Chat from "./component/Chat.js"
 
 function App() {
 
   const { isAuthenticated, user } = useSelector(state => state.user)
 
   const [stripeApiKey, setStripeApiKey] = useState('')
+  console.log(stripeApiKey)
 
   async function getStripeApiKey() {
     const { data } = await axios.get("/api/v1/stripeapikey")
@@ -80,6 +82,7 @@ function App() {
           <ProtectedRoute exact path="/process/payment" component={Payment} />
         </Elements>
       )}
+      {isAuthenticated && <Chat />}
 
       <Switch>
 
@@ -159,7 +162,7 @@ function App() {
 
         <ProtectedRoute exact path="/admin/reviews" isAdmin={true} component={ProductReviews} />
 
-        <Route component={window.location.pathname === "/process/payment" ? null : NotFound} />
+        {/* <Route component={window.location.pathname === "/process/payment" ? null : NotFound} /> */}
       </Switch>
       <Footer />
     </Router>
